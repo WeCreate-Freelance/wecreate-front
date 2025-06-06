@@ -1,0 +1,186 @@
+/*=============================
+	12. Messages CSS Start
+===============================*/
+// Message section one
+.ep-messages-section {
+	padding-bottom: 92px;
+
+	&::before {
+		width: 1600px;
+		height: 100%;
+		background-color: var(--bs-white-color);
+		position: absolute;
+		top: 0;
+		left: 0;
+		content: "";
+	}
+
+	.message-image {
+		border-top-right-radius: 20px;
+		border-top-left-radius: 20px;
+		max-width: 915px;
+		height: 854px;
+
+		img {
+			border-top-right-radius: 20px;
+			border-top-left-radius: 20px;
+			object-fit: cover;
+			object-position: center;
+			height: 100%;
+		}
+	}
+}
+
+// Message section two
+.ep-messages-section-two {
+	padding-bottom: 120px;
+
+	&::before {
+		display: none;
+	}
+
+	.message-main {
+		background-color: var(--bs-white-color);
+		padding: 80px 60px;
+
+		.message-form {
+			.input-group {
+				.form-field {
+					background-color: var(--bs-background-color);
+					border-radius: 30px !important;
+				}
+
+				.textarea-control {
+					height: 150px;
+					;
+				}
+			}
+		}
+
+		.message-contact-info {
+			padding: 80px 40px;
+			background-color: var(--bs-primary-color);
+			height: 100%;
+
+			.contact-info {
+				li {
+					gap: 15px;
+
+					.icon {
+						width: 40px;
+						height: 40px;
+						text-align: center;
+						line-height: 40px;
+						border-radius: 10px;
+						background-color: rgba(255, 255, 255, 0.1);
+						color: var(--bs-white-color);
+					}
+				}
+
+				.cn-title {
+					color: var(--bs-white-color);
+					opacity: 0.8;
+					margin-bottom: 2px;
+				}
+
+				.cn-info {
+					color: var(--bs-white-color);
+					opacity: 0.8;
+
+					a {
+						color: var(--bs-white-color);
+						opacity: 0.8;
+
+						&:hover {
+							opacity: 1;
+						}
+					}
+				}
+
+				li+li {
+					margin-top: 58px;
+				}
+			}
+		}
+	}
+}
+
+.ep-messages-section-two.style2 {
+	padding-bottom: 0;
+
+	.message-main {
+		border: 1px solid var(--bs-border-color);
+	}
+}
+
+@media (max-width: 1399.98px) {
+	.ep-messages-section .message-image {
+		max-width: 585px;
+	}
+
+	.ep-messages-section::before {
+		width: 1100px;
+	}
+}
+
+@media (max-width: 1199.98px) {
+	.ep-messages-section .message-image {
+		max-width: 480px;
+	}
+
+	.ep-messages-section::before {
+		width: 900px;
+		height: 100%;
+		background-color: var(--bs-white-color);
+		position: absolute;
+		top: 0;
+		left: 0;
+		content: "";
+	}
+
+	.ep-messages-section-two .message-main .message-contact-info .contact-info li+li {
+		margin-top: 30px;
+	}
+}
+
+@media (max-width: 991.98px) {
+	.ep-messages-section {
+		background-color: var(--bs-white-color);
+	}
+
+	.ep-messages-section .message-image {
+		display: none;
+	}
+
+	.ep-messages-section::before {
+		display: none;
+	}
+
+	.ep-messages-section-two {
+		background-color: transparent;
+	}
+}
+
+@media (max-width: 767.98px) {
+	.ep-messages-section {
+		padding-bottom: 70px;
+	}
+
+	.ep-messages-section-two .message-main {
+		padding: 30px 24px;
+	}
+
+	.ep-messages-section-two .message-main .message-contact-info .contact-info li+li {
+		margin-top: 30px;
+	}
+
+	.ep-messages-section-two .message-main .message-contact-info {
+		padding: 40px 20px;
+	}
+}
+
+@media (max-width: 575.98px) {
+	.ep-messages-section-two .message-main .message-contact-info .contact-info .cn-title {
+		font-size: 15px;
+	}
+}

@@ -1,0 +1,142 @@
+/*=============================
+	20. Page Header CSS Start
+===============================*/
+
+.ep-page-header-section {
+  padding-top: 228px;
+  background: rgba(255, 190, 22, 0.05);
+
+  .bread-crumb {
+    padding: 64px 0;
+
+    .page-title {
+      font-weight: 700;
+      font-size: 60px;
+      line-height: 68px;
+
+    }
+
+    li {
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 36px;
+      color: var(--bs-black-color);
+
+      i {
+        font-size: 16px;
+        margin-left: 10px;
+        color: var(--bs-primary-color);
+      }
+
+      a {
+        color: var(--bs-black-color);
+        position: relative;
+
+        &:hover {
+          color: var(--bs-primary-color);
+        }
+      }
+    }
+
+    li+li {
+      margin-left: 19px;
+    }
+  }
+}
+
+@media (max-width: 1399.98px) {
+  .ep-page-header-section .bread-crumb .page-title {
+    font-size: 52px;
+    line-height: 50px;
+  }
+
+  .ep-page-header-section {
+    padding-top: 173px;
+  }
+
+  .ep-page-header-section .bread-crumb ul {
+    margin-top: 15px !important;
+  }
+
+  .ep-page-header-section .bread-crumb {
+    padding: 64px 0;
+    padding-top: 100px;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .ep-page-header-section {
+    padding-top: 150px;
+  }
+
+  .ep-page-header-section .bread-crumb .page-title {
+    font-size: 44px;
+    line-height: 50px;
+  }
+
+  .ep-page-header-section .bread-crumb li {
+    font-size: 18px;
+  }
+
+  .ep-page-header-section .header-img img {
+    width: 230px;
+  }
+
+  .ep-page-header-section .bread-crumb {
+    padding: 64px 0;
+    padding-top: 64px;
+  }
+}
+
+@media (max-width: 991.98px) {}
+
+@media (max-width: 767.98px) {
+  .ep-page-header-section .bread-crumb .page-title {
+    font-size: 34px;
+    line-height: 40px;
+  }
+
+  .ep-page-header-section .bread-crumb ul {
+    margin-top: 15px !important;
+  }
+
+  .ep-page-header-section .bread-crumb li {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .ep-page-header-section .header-img {
+    display: none;
+  }
+
+  .ep-page-header-section .bread-crumb {
+    text-align: center !important;
+  }
+
+  .ep-page-header-section .bread-crumb ul {
+    justify-content: center !important;
+  }
+
+  .ep-page-header-section .bread-crumb {
+    padding: 55px 0;
+  }
+
+  .ep-page-header-section {
+    padding-top: 66px;
+  }
+
+  .ep-page-header-section .bread-crumb .page-title {
+    font-size: 32px;
+  }
+
+  .ep-page-header-section .bread-crumb ul {
+    margin-top: 12px !important;
+  }
+
+  .ep-page-header-section .bread-crumb li {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}

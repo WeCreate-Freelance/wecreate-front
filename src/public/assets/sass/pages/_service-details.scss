@@ -1,0 +1,155 @@
+/*====================================
+	21. Service Details Page CSS Start
+======================================*/
+
+.ep-service-details-section {
+	.service-details {
+		.service-text {
+			p+p {
+				margin-top: 20px;
+			}
+
+			.title {
+				margin-bottom: 20px;
+			}
+
+			.sub-title {
+				margin: 30px 0 10px 0;
+			}
+
+			.options {
+				margin: 20px 0 62px 0;
+
+				li {
+					i {
+						font-size: 16px;
+						margin-right: 10px;
+						color: var(--bs-primary-color);
+					}
+				}
+
+				li+li {
+					margin-top: 14px;
+				}
+			}
+
+			.inner-details {
+				margin-bottom: 60px;
+
+				.inner-options {
+					margin-top: 20px !important;
+
+					li {
+						color: var(--bs-paragraph-color);
+
+						i {
+							font-size: 14px;
+							margin-right: 10px;
+							color: var(--bs-secondary-color);
+						}
+					}
+
+					li+li {
+						margin-top: 10px;
+					}
+				}
+			}
+
+		}
+	}
+
+	.service-sidebar {
+		border: 1px solid var(--bs-border-color);
+		padding: 40px;
+		position: sticky;
+		top: 120px;
+
+		.sidebar-title {
+			font-size: 22px;
+			font-weight: 700;
+			line-height: 36px;
+			padding-right: 20px;
+
+			&::before {
+				position: absolute;
+				left: 100%;
+				top: 50%;
+				transform: translateY(-50%);
+				background-color: var(--bs-secondary-color);
+				content: "";
+				width: 30px;
+				height: 2px;
+			}
+
+			&::after {
+				position: absolute;
+				right: -40px;
+				top: 50%;
+				transform: translateY(-50%);
+				background-color: var(--bs-secondary-color);
+				content: "";
+				width: 10px;
+				height: 10px;
+				border-radius: 50%;
+			}
+		}
+
+		.category {
+			li {
+				a {
+					background-color: var(--bs-background-color);
+					border-radius: 10px;
+					font-size: 18px;
+					font-weight: 700;
+					color: var(--bs-black-color);
+					line-height: 30px;
+					padding: 10px 20px;
+					gap: 15px;
+
+					span {
+						font-size: 18px;
+						font-weight: 400;
+						color: var(--bs-paragraph-color);
+						transition: var(--bs-transition);
+					}
+
+					&:hover {
+						background-color: var(--bs-secondary-color);
+						color: var(--bs-white-color);
+
+						span {
+							color: var(--bs-white-color) !important;
+						}
+					}
+				}
+			}
+
+			li+li {
+				margin-top: 20px;
+			}
+		}
+	}
+}
+
+
+@media (max-width: 1399.98px) {
+	.ep-service-details-section .service-sidebar {
+		padding: 24px;
+	}
+
+	.ep-service-details-section .service-sidebar .category li a {
+		font-size: 17px;
+	}
+
+	.ep-service-details-section .service-sidebar .category li a span {
+		font-size: 17px;
+	}
+}
+
+@media (max-width: 1199.98px) {}
+
+@media (max-width: 991.98px) {}
+
+@media (max-width: 767.98px) {}
+
+@media (max-width: 575.98px) {}

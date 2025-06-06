@@ -1,0 +1,151 @@
+/*=============================
+	11. Pricing CSS Start
+===============================*/
+.ep-pricing-section {
+  .pricing-item {
+    padding: 40px;
+    background-color: var(--bs-white-color);
+    transition: var(--bs-transition);
+    border: 1px solid transparent;
+    height: 100%;
+
+    &:hover {
+      border-color: var(--bs-primary-color);
+    }
+
+    .price-header {
+      gap: 28px;
+
+      .price-box {
+        .title {
+          margin-bottom: 20px;
+        }
+      }
+
+      .icon-box {
+        background-color: rgba(71, 177, 106, 0.1);
+        width: 100px;
+        height: 100px;
+      }
+    }
+
+    .options {
+      li {
+        gap: 14px;
+
+        i {
+          font-size: 14px;
+          font-weight: 400;
+          color: var(--bs-primary-color);
+          line-height: 28px;
+        }
+
+        span {
+          color: var(--bs-paragraph-color);
+        }
+      }
+
+      li+li {
+        margin-top: 15px;
+      }
+    }
+
+    .theme-btn {
+      border-color: var(--bs-border-color);
+
+      .arrow {
+        top: -2px;
+      }
+
+      &:hover {
+        border-color: transparent;
+      }
+    }
+  }
+}
+
+.ep-pricing-section.style2 {
+  .pricing-item {
+    background-color: var(--bs-background-color);
+
+    &:hover {
+      background-color: var(--bs-white-color);
+      box-shadow: 0px 5px 60px rgba(0, 0, 0, 0.05);
+    }
+
+    .price-header {
+
+      .price-box {
+        .title {
+          margin-bottom: 14px;
+        }
+
+        .price {
+          font-weight: 500;
+          font-size: 42px;
+          line-height: 40px;
+          letter-spacing: -0.64px;
+        }
+      }
+
+      .icon-box {
+        background-color: rgba(71, 177, 106, 0.1);
+        width: 100px;
+        height: 100px;
+      }
+    }
+
+    .options {
+      margin-top: 65px;
+    }
+  }
+}
+
+@media (max-width: 1399.98px) {
+  .ep-pricing-section .pricing-item {
+    padding: 40px 20px;
+  }
+
+  .ep-pricing-section .pricing-item .price-header .price-box .title {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .ep-pricing-section .pricing-item .price-header .icon-box {
+    width: 90px;
+    height: 90px;
+  }
+
+  .ep-pricing-section .pricing-item .price-header .price {
+    font-size: 46px;
+  }
+}
+
+@media (max-width: 1199.98px) {}
+
+@media (max-width: 991.98px) {
+  .ep-pricing-section .pricing-item .price-header {
+    gap: 20px;
+  }
+
+  .ep-pricing-section .pricing-item .price-header .price-box .title {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  .ep-pricing-section .pricing-item .options li+li {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .ep-pricing-section .pricing-item {
+    padding:30px;
+  }
+  .ep-pricing-section .pricing-item .price-header .price {
+    font-size: 38px;
+    line-height: 48px;
+  }
+}
+
+@media (max-width: 575.98px) {}

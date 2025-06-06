@@ -1,0 +1,139 @@
+/*==================================
+	22. Project Details Page CSS Start
+====================================*/
+.ep-project-details-section {
+  .project-banner-image {
+    margin-bottom: 80px;
+
+    .project-information {
+      bottom: -70px;
+      right: 60px;
+      background-color: var(--bs-white-color);
+      padding: 30px;
+      max-width: 410px;
+      width: 100%;
+      box-shadow: 0px 5px 60px rgba(0, 0, 0, 0.05);
+
+      .title {
+        font-weight: 700;
+        font-size: 26px;
+        line-height: 30px;
+        padding: 14px 20px;
+        border: 1px solid var(--bs-secondary-color);
+      }
+
+      .options {
+        li {
+          padding: 14px 20px;
+
+          .label {
+            max-width: 95px;
+            width: 100%;
+          }
+        }
+
+        li+li {
+          margin-top: 20px;
+        }
+      }
+
+      .social-icon-box {
+
+        li {
+          margin: 0 2px;
+
+          a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+  }
+
+  .project-description {
+    .title {
+      margin-bottom: 20px;
+    }
+
+    p+p {
+      margin-top: 20px;
+    }
+
+    .inner-options {
+      margin: 28px 0 60px 0;
+
+      ul {
+        li {
+          font-weight: 700;
+          font-size: 18px;
+          line-height: 30px;
+
+          img {
+            margin-right: 10px;
+          }
+        }
+
+        li+li {
+          margin-top: 15px;
+        }
+      }
+    }
+
+    .list-info {
+      .info-item {
+        .info-title {
+          margin-bottom: 10px;
+
+          i {
+            color: var(--bs-primary-color);
+            margin-right: 10px;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width:1199.98px) {
+  .ep-project-details-section .project-banner-image .project-information .title {
+    font-size: 22px;
+  }
+
+  .ep-project-details-section .project-banner-image .project-information .options li+li {
+    margin-top: 10px;
+  }
+
+  .ep-project-details-section .project-banner-image .project-information {
+    right: 30px;
+  }
+}
+
+@media (max-width:991.98px) {
+  .ep-project-details-section .project-banner-image .project-information {
+    max-width: 100%;
+    width: 100%;
+    position: static !important;
+    margin-top: 30px;
+  }
+}
+
+@media (max-width:767.98px) {
+  .ep-project-details-section .project-description .title {
+    margin-bottom: 20px;
+    font-size: 28px;
+  }
+
+  .ep-project-details-section .project-banner-image .project-information .options li p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width:575.98px) {
+  .ep-project-details-section .project-description .inner-options ul li {
+    font-size: 16px;
+    line-height: 26px;
+  }
+}

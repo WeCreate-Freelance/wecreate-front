@@ -1,0 +1,359 @@
+/*=============================
+	04. Banner CSS Start
+===============================*/
+
+// Banner section one
+.ep-banner-section {
+	padding-top: 113px;
+	padding-bottom: 17px;
+	background-color: var(--bs-white-color);
+
+	.banner-title {
+		margin-bottom: 30px;
+	}
+
+	.banner-shape {
+		left: 0;
+
+		img {
+			width: 100%;
+			animation: rotate 55s infinite linear;
+		}
+	}
+
+	.banner-text {
+		padding: 40px 0;
+		max-width: 463px;
+
+		.banner-title-shape {
+			top: 20px;
+			right: 15px;
+		}
+
+		.banner-buttons {
+			margin-top: 40px;
+
+			.theme-btn {
+				margin-right: 50px;
+			}
+
+			.play-now-btn {
+				.icon {
+					width: 50px;
+					height: 50px;
+					background-color: var(--bs-tertiary-color);
+					color: var(--bs-primary-color);
+					font-size: 15px;
+					transition: var(--bs-transition);
+				}
+
+				.text {
+					color: var(--bs-paragraph-color);
+					font-family: var(--bs-font-primary);
+					font-size: 18px;
+					font-weight: 400;
+					line-height: 28px;
+					letter-spacing: -0.36px;
+					margin-left: 10px;
+				}
+
+				&:hover {
+					.icon {
+						background-color: var(--bs-black-color);
+						color: var(--bs-white);
+					}
+				}
+			}
+		}
+	}
+
+	.banner-image {
+		margin-top: 10px;
+	}
+
+	.custom-shadown {
+		width: 431px;
+		height: 431px;
+		background: var(--bs-tertiary-color);
+		opacity: 0.6;
+		filter: blur(152.60000610351562px);
+		bottom: -176px;
+		right: -220px;
+	}
+}
+
+// Banner section two
+.ep-banner-section-two {
+	background-color: var(--bs-white-color);
+
+	.banner-main {
+		&::before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 64%;
+			height: 100%;
+			background: var(--bs-black-color);
+			content: "";
+			z-index: -1;
+			clip-path: polygon(0 0, calc(100% - 360px) 0, 100% 100%, 0% 100%);
+		}
+	}
+
+	.banner-row {
+		--bs-gutter-y: 0px;
+	}
+
+	.banner-shape-4 {
+		top: 0;
+		right: 0;
+	}
+
+	.banner-text {
+		padding: 90px 0;
+
+		.banner-title {
+			color: var(--bs-white-color);
+			font-size: 92px;
+			font-weight: 700;
+			line-height: 100px;
+			letter-spacing: -1.841px;
+		}
+
+		p {
+			color: var(--bs-white-color);
+			font-size: 18px;
+			font-weight: 400;
+			line-height: 28px;
+			letter-spacing: -0.36px;
+			max-width: 463px;
+			margin: 28px 0 30px 0;
+		}
+
+		.rotate-img {
+			width: 203px;
+			height: 203px;
+			border-radius: 50%;
+			position: relative;
+			padding: 13px;
+			background-color: rgba(255, 255, 255, 0.05);
+
+			img {
+				animation: spin 26s infinite linear;
+			}
+
+			.video-rotate-btn {
+				color: var(--bs-white-color);
+				width: 89px;
+				height: 89px;
+				border-radius: 50%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background-color: var(--bs-secondary-color);
+
+				i {
+					font-size: 25px;
+				}
+			}
+		}
+	}
+
+	.banner-image {
+		width: 873px;
+
+		.banner-shape-2 {
+			top: -89px;
+			right: 65.3%;
+		}
+
+		.banner-shape-3 {
+			top: 357px;
+			right: 86%;
+		}
+	}
+}
+
+@media (max-width:1799.98px) {
+	.ep-banner-section-two .banner-main::before {
+		width: 68%;
+		clip-path: polygon(0 0, calc(100% - 340px) 0, 100% 100%, 0% 100%);
+	}
+
+	.ep-banner-section-two .banner-image {
+		width: 810px;
+	}
+
+	.ep-banner-section-two .banner-image .banner-shape-2 {
+		top: -112px;
+		right: 63%;
+	}
+}
+
+@media (max-width: 1399.98px) {
+	.ep-banner-section .banner-text .banner-title-shape {
+		right: 50px;
+	}
+
+	.ep-banner-section-two .banner-text .banner-title {
+		font-size: 68px;
+		line-height: 78px;
+	}
+
+	.ep-banner-section-two .banner-image {
+		width: 677px;
+	}
+
+	.ep-banner-section-two .banner-image .banner-shape-2 {
+		top: -129px;
+		right: 61.5%;
+	}
+
+	.ep-banner-section-two .banner-image .banner-shape-3 {
+		top: 323px;
+		right: 87%;
+		transform: rotate(-6deg);
+	}
+}
+
+@media (max-width: 1199.98px) {
+
+	.ep-banner-section .banner-text .banner-title-shape {
+		right: 50px;
+	}
+
+	.ep-banner-section {
+		padding-top: 90px;
+	}
+
+	.ep-banner-section .banner-shape {
+		left: -125px;
+	}
+
+	.ep-banner-section .banner-text .banner-title-shape {
+		right: 5px;
+		top: 10px;
+	}
+
+	.ep-banner-section-two .banner-text .banner-title {
+		font-size: 52px;
+		line-height: 63px;
+	}
+
+	.ep-banner-section-two .banner-main::before {
+		width: 74%;
+	}
+
+	.ep-banner-section-two .banner-image {
+		width: 606px;
+	}
+
+	.ep-banner-section-two .banner-image .banner-shape-2 {
+		top: -147px;
+		right: 56.5%;
+	}
+
+	.ep-banner-section-two .banner-shape-4 {
+		top: 0px;
+		right: -3px;
+		height: 446px;
+	}
+
+	.ep-banner-section-two .banner-image .banner-shape-2 {
+		top: -127px;
+		right: 59.5%;
+		width: 230px;
+	}
+
+	.ep-banner-section-two .banner-image .banner-shape-3 {
+		top: 287px;
+		right: 85%;
+	}
+
+	.ep-banner-section-two .banner-text {
+		padding: 70px 0;
+	}
+}
+
+@media (max-width: 991.98px) {
+	.ep-banner-section .banner-shape {
+		display: none;
+	}
+
+	.ep-banner-section .banner-text {
+		max-width: 550px;
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	.ep-banner-section .banner-text {
+		margin-top: 65px;
+	}
+
+	.ep-banner-section .banner-image {
+		margin-top: 0;
+	}
+
+	.ep-banner-section {
+		padding-bottom: 50px;
+	}
+
+	.ep-banner-section-two .banner-main::before {
+		width: 100%;
+		clip-path: none;
+	}
+
+	.ep-banner-section-two .banner-shape-4 {
+		display: none;
+	}
+
+	.ep-banner-section-two .banner-image .banner-shape-2 {
+		display: none;
+	}
+
+	.ep-banner-section-two .banner-image .banner-shape-3 {
+		display: none;
+	}
+
+	.ep-banner-section-two .banner-text {
+		text-align: center;
+	}
+
+	.ep-banner-section-two .banner-text p {
+		margin: 28px auto 30px;
+	}
+
+	.ep-banner-section-two .banner-text .rotate-img {
+		margin: 0 auto;
+	}
+
+	.ep-banner-section-two .banner-image {
+		margin: 0 auto;
+		padding-bottom: 60px;
+	}
+}
+
+@media (max-width: 767.98px) {
+	.ep-banner-section-two .banner-image {
+		width: 100%;
+	}
+
+	.ep-banner-section-two .banner-text {
+		padding-bottom: 50px;
+	}
+}
+
+@media (max-width: 575.98px) {
+	.ep-banner-section .banner-text {
+		margin-top: 40px;
+	}
+
+	.ep-banner-section .banner-text .banner-buttons .theme-btn {
+		margin-right: 16px;
+	}
+
+	.ep-banner-section-two .banner-text .banner-title {
+		font-size: 44px;
+		line-height: 56px;
+	}
+}

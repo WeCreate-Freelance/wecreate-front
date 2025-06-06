@@ -1,0 +1,99 @@
+/*=============================
+	13. Call to Action CSS Start
+===============================*/
+
+// Call to action section one
+.ep-cta-section {
+  background-color: var(--bs-tertiary-color);
+  padding: 80px 0;
+  background-repeat: no-repeat;
+  background-position: top left;
+
+  .cta-text {
+    .info {
+      max-width: 270px;
+      color: var(--bs-black-color);
+      font-size: 32px;
+      font-weight: 500;
+      line-height: 40px;
+      letter-spacing: -0.64px;
+    }
+  }
+
+  .cta-form {
+    .input-group {
+      .form-field {
+        background-color: transparent;
+        border-color: var(--bs-black-color);
+        height: 60px;
+
+        &:focus {
+          border-color: var(--bs-primary-color);
+        }
+      }
+
+      .mail-icon {
+        font-size: 14px;
+        right: 28px;
+      }
+    }
+  }
+}
+
+// Call to action section two
+.ep-cta-section-two {
+  background: var(--bs-primary-color);
+  padding: 144px 0 137px 0;
+
+  .cta-text {
+    .section-title-block {
+      p {
+        margin-top: 16px;
+        color: var(--bs-white);
+      }
+    }
+
+    .button-groups {
+      gap: 45px;
+
+      .signup {
+        background-color: var(--bs-white-color);
+        color: var(--bs-black-color);
+
+        &:hover {
+          color: var(--bs-white-color);
+        }
+      }
+
+      .btn-tertiary {
+        background-color: var(--bs-tertiary-color);
+        color: var(--bs-black-color);
+
+        &:hover {
+          color: var(--bs-white-color);
+        }
+      }
+    }
+  }
+}
+
+
+@media (max-width: 767.98px) {
+  .ep-cta-section-two {
+    padding: 100px 0 100px 0;
+  }
+
+  .ep-cta-section-two .cta-text .button-groups {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .ep-cta-section {
+    padding: 60px 0;
+  }
+
+  .ep-cta-section .theme-btn {
+    width: 100%;
+  }
+}
