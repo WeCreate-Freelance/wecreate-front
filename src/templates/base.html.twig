@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{% block title %}WeCreate{% endblock %}</title>
+        <meta name="description" content="WeCreate is a platform to provide services for companies and individuals to create software, websites, and applications.">
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0, user-scalable=yes">
+        <!-- Favicon -->
+        <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/img/fevicon.svg') }}">
+        {% block stylesheets %}
+        {% endblock %}
+
+        {% block head_javascripts %}
+        {% endblock %}
+    </head>
+    <body class="section-bg">
+        {% block body %}{% endblock %}
+
+        {% block body_javascripts %}
+        {% endblock %}
+    </body>
+</html>
