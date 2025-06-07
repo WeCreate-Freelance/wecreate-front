@@ -1,0 +1,146 @@
+/*=============================
+	17. FAQ CSS Start
+===============================*/
+
+.ep-faq-section {
+	.faq-body {
+
+		.accordion-button:focus {
+			box-shadow: none;
+		}
+
+		.accordion-item {
+			border: 0;
+			margin: 10px 0;
+			background-color: var(--bs-white-color);
+			border-radius: 30px;
+		}
+
+		.accordion-item+.accordion-item {
+			margin-top: 30px;
+		}
+
+		.accordion-button:not(.collapsed) {
+			background-color: transparent;
+			box-shadow: none;
+		}
+
+		.accordion-button {
+			color: var(--bs-black-color);
+			font-size: 18px;
+			font-weight: 700;
+			line-height: 30px;
+			border-radius: 120px !important;
+			padding: 23px 30px;
+		}
+
+		.accordion-body {
+			padding: 0 30px 30px 30px;
+		}
+
+		.accordion-button::after {
+			background-image: url(../img/icons/plus-solid.svg);
+			transition: none;
+			background-position: 0 0;
+		}
+
+		.accordion-button:not(.collapsed)::after {
+			background-image: url(../img/icons/dash-lg.svg);
+			background-position: 0 8px;
+		}
+
+	}
+
+	.faq-images {
+		padding-left: 50px;
+
+		.clients {
+			height: 100%;
+			background-color: var(--bs-tertiary-color);
+			padding: 20px;
+
+			.client-number {
+				color: var(--bs-black-color);
+				font-family: var(--bs-font-secondary);
+				font-size: 60px;
+				font-weight: 700;
+				line-height: 68px;
+				letter-spacing: -1.48px;
+
+				.odometer {
+					font-weight: 700;
+				}
+			}
+
+			.trust {
+				color: var(--bs-black-color);
+				font-family: var(--bs-font-secondary);
+				font-size: 18px;
+				font-weight: 300;
+				line-height: 30px;
+				margin-top: 5px;
+			}
+		}
+	}
+}
+
+.ep-faq-section.style2 {
+	.accordion-item {
+		border: 1px solid var(--bs-border-color);
+	}
+
+	.clients {
+		background-color: var(--bs-secondary-color);
+
+		.client-number {
+			color: var(--bs-white-color);
+		}
+
+		.trust {
+			color: var(--bs-white-color);
+			font-weight: 700;
+		}
+	}
+}
+
+@media (max-width: 1399.98px) {
+	.ep-faq-section .faq-images {
+		padding-left: 0;
+	}
+}
+
+@media (max-width: 1199.98px) {
+	.ep-faq-section .faq-images {
+		padding-left: 0;
+	}
+
+	.ep-faq-section .faq-images .clients img {
+		width: 60px;
+	}
+
+	.ep-faq-section .faq-body .accordion-item+.accordion-item {
+		margin-top: 20px;
+	}
+}
+
+@media (max-width: 991.98px) {}
+
+@media (max-width: 767.98px) {
+	.ep-faq-section .accordion-button::after {
+		transform: scale(.7) !important;
+	}
+
+	.ep-faq-section .faq-body .accordion-button {
+		padding: 23px 18px;
+	}
+}
+
+@media (max-width: 575.98px) {
+	.ep-faq-section .faq-images .clients {
+		padding: 30px 20px;
+	}
+
+	.ep-faq-section .faq-body .accordion-button {
+		padding: 17px 20px;
+	}
+}

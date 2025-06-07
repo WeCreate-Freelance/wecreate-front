@@ -1,0 +1,205 @@
+/*=============================
+	10. Team CSS Start
+===============================*/
+// Team section one
+.ep-team-section {
+	.team-item {
+		border: 1px solid var(--bs-border-color);
+		transition: var(--bs-transition);
+		padding: 50px 40px;
+
+		.team-name-info {
+			position: relative;
+
+			.name {
+				color: var(--bs-black-color);
+				font-size: 22px;
+				font-weight: 700;
+				line-height: 36px;
+				margin-bottom: 10px;
+			}
+		}
+
+		.social-icon-box {
+			margin-left: 40px;
+			position: relative;
+			z-index: 99;
+		}
+
+		.hover-image {
+			max-width: 300px;
+			right: 78px;
+			top: 50%;
+			transform: translateY(-50%) rotate(-15deg);
+			visibility: hidden;
+			opacity: 0;
+			z-index: 9;
+			transition: var(--bs-transition);
+		}
+
+		&:hover {
+			background-color: var(--bs-white-color);
+
+			.hover-image {
+				visibility: visible;
+				opacity: 1;
+			}
+
+			.social-icon-box {
+				a {
+					background-color: var(--bs-white-color);
+
+					&:hover {
+						background-color: var(--bs-primary-color);
+					}
+				}
+			}
+		}
+	}
+
+	.active-team {
+		.hover-image {
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+
+	.team-item+.team-item {
+		margin-top: 60px;
+	}
+
+	.all-members {
+		margin-top: 80px;
+	}
+}
+
+.ep-team-section.style2 {
+	.team-item {
+		&:hover {
+			background: var(--bs-background-color);
+		}
+	}
+}
+
+// Team section two
+.ep-team-section-two {
+	.team-item-two {
+		.overlay {
+			background: linear-gradient(180deg, rgba(14, 43, 197, 0.00) 0%, #0E2BC5 100%);
+			padding: 30px 30px 40px;
+			transition: var(--bs-transition);
+			visibility: hidden;
+			opacity: 0;
+
+			.name {
+				margin-bottom: 5px;
+				color: var(--bs-white-color);
+			}
+
+			.designation {
+				margin-bottom: 20px;
+				color: var(--bs-white-color);
+			}
+
+			.social-icon-box {
+				li {
+					opacity: 0;
+					transition: var(--bs-transition);
+					transform: translateY(10px);
+				}
+
+				a {
+					border: 0;
+					background-color: var(--bs-white-color);
+
+					&:hover {
+						background-color: var(--bs-tertiary-color);
+						color: var(--bs-black-color);
+					}
+				}
+			}
+		}
+
+		&:hover {
+			.overlay {
+				visibility: visible;
+				opacity: 1;
+
+				.social-icon-box {
+					li {
+						opacity: 1;
+						transform: translateY(0);
+					}
+				}
+
+				.social-icon-box li:nth-child(1) {
+					transition-delay: 0.2s;
+
+				}
+
+				.social-icon-box li:nth-child(2) {
+					transition-delay: 0.3s;
+				}
+
+				.social-icon-box li:nth-child(3) {
+					transition-delay: 0.4s;
+				}
+
+				.social-icon-box li:nth-child(4) {
+					transition-delay: 0.5s;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 1399.98px) {
+	.ep-team-section .team-item .hover-image {
+		max-width: 250px;
+	}
+}
+
+@media (max-width: 1199.98px) {}
+
+@media (max-width: 991.98px) {
+	.ep-team-section .social-icon-box a {
+		background-color: var(--bs-white-color);
+		color: var(--bs-black-color);
+
+		&:hover {
+			color: var(--bs-white-color);
+		}
+	}
+	.ep-team-section-two .short-info{
+		margin-bottom: 40px;
+	}
+}
+
+@media (max-width: 767.98px) {
+	.ep-team-section .team-item {
+		padding: 30px 30px;
+		text-align: center;
+	}
+
+	.ep-team-section .hover-image {
+		position: static !important;
+		transform: unset !important;
+		margin: 0 auto;
+		visibility: visible !important;
+		opacity: 1 !important;
+	}
+
+	.ep-team-section .team-item .social-icon-box {
+		margin-left: 0;
+	}
+
+	.ep-team-section .team-item+.team-item {
+		margin-top: 30px;
+	}
+
+	.ep-team-section .all-members {
+		margin-top: 40px;
+	}
+}
+
+@media (max-width: 575.98px) {}

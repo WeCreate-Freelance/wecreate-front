@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/fontawsome/css/fontawesome.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/slick.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/animate.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/odometer.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+{% endblock %}
+
+{% block title %}
+    WeCreate - About Us
+{% endblock %}
+
+{% block body %}
+    {% include 'front/common/preloader.html.twig' %}
+    {% include 'front/common/header.html.twig' %}
+
+    <!-- Main area start -->
+    <main>
+        {% include 'front/common/about-us-banner.html.twig' %}
+        {% include 'front/common/about-us.html.twig' %}
+        {% include 'front/common/tech-text-slider.html.twig' %}
+        {% include 'front/common/who-we-are.html.twig' %}
+        <br>
+        <br>
+        <br>
+        <br>
+        {% include 'front/common/newsletter.html.twig' %}
+        {% include 'front/common/creative-members.html.twig' %}
+    </main>
+    <!-- Main area end -->
+
+    {% include 'front/common/back-to-top-button.html.twig' %}
+    {% include 'front/common/footer.html.twig' %}
+{% endblock %}
+
+{% block body_javascripts %}
+    <script src="{{ asset('assets/js/vendor/jquery-3.6.0.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('assets/js/gsap.js') }}"></script>
+    <script src="{{ asset('assets/js/gsap-scroll-trigger.js') }}"></script>
+    <script src="{{ asset('assets/js/gsap-split-text.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.appear.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.odometer.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('assets/js/ajax-form.js') }}"></script>
+    <script src="{{ asset('assets/js/slick.min.js') }}"></script>
+    <script src="{{ asset('assets/js/script.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,90 @@
+/*=============================
+	08. Who We are CSS Start
+===============================*/
+.ep-who-we-area-section {
+  .short-info {
+    padding-right: 10px;
+
+    p+p {
+      margin-top: 20px;
+    }
+  }
+
+  .image {
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    align-items: stretch;
+
+    .counter {
+      background-color: var(--bs-tertiary-color);
+      padding: 20px;
+      border-top-left-radius: 30px;
+      border-bottom-left-radius: 30px;
+
+      .icon-box {
+        width: 120px;
+        height: 120px;
+      }
+
+      .count {
+        color: var(--bs-black-color);
+        font-family: var(--bs-font-secondary);
+        font-size: 60px;
+        font-weight: 700;
+        line-height: 68px;
+        letter-spacing: -1.48px;
+        margin: 30px 0 5px 0;
+      }
+    }
+
+    .img {
+      max-width: 490px;
+      width: 100%;
+      margin-left: auto;
+      border-top-right-radius: 30px;
+      border-bottom-right-radius: 30px;
+    }
+  }
+}
+
+@media (max-width: 1399.98px) {}
+
+@media (max-width: 1199.98px) {
+  .ep-who-we-area-section .image .img {
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .ep-who-we-area-section .image .img {
+    max-width: 420px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .ep-who-we-area-section .image .counter .icon-box {
+    width: 95px;
+    height: 95px;
+
+    img {
+      width: 50px;
+    }
+  }
+
+  .ep-who-we-area-section .image .counter .count {
+    font-size: 46px;
+    line-height: 42px;
+    margin: 20px 0 0px 0;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .ep-who-we-area-section .image .counter {
+    border-radius: 30px;
+    margin-bottom: 20px;
+  }
+
+  .ep-who-we-area-section .image .img {
+    border-radius: 30px;
+  }
+}
