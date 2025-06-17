@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Separate multiple addresses with commas.
     // You can use a mix of 'To' and 'Bcc' if needed.
     $recipients_to = "mark.fajardo@wecreate-services.com";
-    $recipients_bcc = "rencielyne.macale@wecreate-services.com";
+    $recipients_bcc = "rencielyne.fajardo@wecreate-services.com";
 
     // Set the email subject.
     $sender = "New contact from $name";
