@@ -2,7 +2,7 @@
 // Only process POST reqeusts.
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    // Get the form fields and remove MORALspace.
+    // Get the form fields and remove whitespace.
     $name = strip_tags(trim($_POST["name"]));
     $name = str_replace(array("\r", "\n"), array(" ", " "), $name);
     $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
@@ -19,9 +19,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
-    // Set the recipient email address.
-    // FIXME: Update this to your desired email address.
-    $recipient = "example@example.com";
+    // Set the recipient email addresses.
+    // Separate multiple addresses with commas.
+    // You can use a mix of 'To' and 'Bcc' if needed.
+    $recipients_to = "mark.fajardo@wecreate-services.com";
+    $recipients_bcc = "rencielyne.fajardo@wecreate-services.com";
 
     // Set the email subject.
     $sender = "New contact from $name";
@@ -42,9 +44,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email_content .= "Message:\n$message\n";
 
     // Build the email headers.
-    $email_headers = "From: $name <$email>";
+    // Include 'From', 'Reply-To', 'To', and 'Bcc' headers.
+    $email_headers = "From: $name <$email>\r\n";
+    $email_headers .= "Reply-To: $email\r\n"; // Useful for direct replies
+    $email_headers .= "To: $recipients_to\r\n";
+    if (!empty($recipients_bcc)) {
+        $email_headers .= "Bcc: $recipients_bcc\r\n";
+    }
+    $email_headers .= "MIME-Version: 1.0\r\n";
+    $email_headers .= "Content-type: text/plain; charset=iso-8859-1\r\n";
+
+
     // Send the email.
-    if (mail($recipient, $sender, $email_content, $email_headers)) {
+    // The first argument to mail() should be the main 'To' address.
+    // Other 'To', 'Cc', 'Bcc' addresses are handled in the headers.
+    if (mail($recipients_to, $sender, $email_content, $email_headers)) {
         // Set a 200 (okay) response code.
         http_response_code(200);
         echo "Thank You! Your message has been sent.";
@@ -58,3 +72,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     http_response_code(403);
     echo "There was a problem with your submission, please try again.";
 }
+?>
