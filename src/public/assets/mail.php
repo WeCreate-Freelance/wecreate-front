@@ -1,7 +1,7 @@
 <?php
 // Only process POST reqeusts.
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $recaptcha_secret_key = '6LcCUWcrAAAAAFfx_7KQvpLlmK37lfk9PwM4OL4i';
+    $recaptcha_secret_key = '6LcUVmcrAAAAAFSXkU2Cz6IVQxqI3wRNtAsTPOsn';
     $recaptcha_response = $_POST['g-recaptcha-response'];
 
     $verify_url = "https://www.google.com/recaptcha/api/siteverify";
