@@ -135,7 +135,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $area = htmlspecialchars($_POST['user_area']);
         $concern = htmlspecialchars($_POST['user_concern']);
 
-        $to = "mjt.fajardo@gmail.com"; // Your email address
+        $to = "mark.fajardo@wecreate-services.com"; // Your email address
         $subject = "New Contact Form Submission from " . $name;
         $message = "Name: " . $name . "\n"
                  . "Email: " . $email . "\n"
