@@ -55,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sender = "New contact from $name";
 
     //Email Header
-    $head = " /// ELEGANTPIXELS \\\ ";
+    $head = " /// WeCreate Front - Contact Us \\\ ";
     // Build the email content.
     $email_content = "$head\n\n\n";
 
