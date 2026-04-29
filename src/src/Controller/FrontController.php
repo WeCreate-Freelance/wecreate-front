@@ -30,4 +30,20 @@ class FrontController extends AbstractMetaController
 
         return $this->render('front/contact.html.twig');
     }
+
+    #[Route('/privacy', name: 'privacy')]
+    public function privacy(): Response
+    {
+        $this->metaTags->setTitle('WeCreate - Privacy Policy');
+
+        return $this->render('front/privacy.html.twig');
+    }
+
+    #[Route('/terms', name: 'terms')]
+    public function terms(): Response
+    {
+        $this->metaTags->setTitle('WeCreate - Terms & Conditions');
+
+        return $this->render('front/terms.html.twig');
+    }
 }
