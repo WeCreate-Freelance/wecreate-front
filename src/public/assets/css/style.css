@@ -4403,3 +4403,72 @@ p {
     margin-bottom: 20px;
   }
 }
+
+/* ==========================================================================
+   Responsive fixes
+   Appended after the theme so these win the cascade. Layout only, no visual
+   redesign: every rule here removes a source of horizontal page scroll.
+   ========================================================================== */
+/* The theme sets .row to a 30px gutter (-15px side margins) but leaves the
+   Bootstrap container at 12px padding, so every row bled 3px past the
+   viewport on all pages. Match the container to the gutter the theme wants. */
+.container,
+.container-fluid {
+  --bs-gutter-x: 30px;
+}
+
+/* The tech marquee is a white-space:nowrap strip up to 1055px wide. With no
+   clipping it forced up to 415px of page scroll on / and /about-us. */
+.ep-text-slider-section .slider-main {
+  overflow: hidden;
+}
+
+/* The CTA corner artwork is fixed at 615px and spilled out of the section
+   below 576px. It is decorative, so clip it to the section box. */
+.ep-cta-section-two {
+  overflow: hidden;
+}
+
+/* Banner artwork is sized in fixed px (873/810/677px) which is wider than its
+   own column at 992px and 1400px. The inner img is already w-100, so capping
+   the wrapper keeps the layout intact and stops the spill. */
+.ep-banner-section-two .banner-image {
+  max-width: 100%;
+}
+
+/* Legal pages contain long unbreakable tokens (emails, subdomains) that
+   overflowed the text column on narrow phones. */
+.legal-container {
+  overflow-wrap: break-word;
+}
+
+/* The legal pages use bare <h2>, which the theme fixes at 60px and never
+   scales down (its other headings scale via per-component classes these pages
+   don't use). At 60px a single word like "Compliance)" is 360px wide and
+   cannot fit a 320px screen. Scale them the way the rest of the site scales. */
+@media (max-width: 991.98px) {
+  .legal-container h2 {
+    font-size: 42px;
+    line-height: 52px;
+  }
+}
+@media (max-width: 575.98px) {
+  .legal-container h2 {
+    font-size: 30px;
+    line-height: 40px;
+  }
+}
+
+/* The contact email is a 34-character unbreakable token in a flex row, so it
+   was clipped at 320px. Three things are needed: the flex item must be allowed
+   to shrink (min-width:auto is the flex default), the inline-block anchor must
+   be capped or it shrink-wraps to the full max-content width, and the token
+   itself needs a break opportunity. */
+.ep-contact-section .contact-information .info-item .text {
+  min-width: 0;
+}
+.ep-contact-section .contact-information .info-item .text ul li,
+.ep-contact-section .contact-information .info-item .text ul li a {
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
