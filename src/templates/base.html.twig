@@ -1,10 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
+        <meta charset="UTF-8">
+        {% set base_url = 'https://wecreate-services.com' %}
+        {% set og_image = base_url ~ asset('assets/img/banner/banner-img-2.png') %}
         <!-- Required meta tags -->
         {{ meta_tags() }}
         <!-- Favicon -->
         <link rel="icon" type="image/svg+xml" href="{{ asset('assets/img/fevicon.svg') }}">
+
+        <!-- Open Graph -->
+        <meta property="og:type" content="website">
+        <meta property="og:site_name" content="WeCreate">
+        <meta property="og:locale" content="en_US">
+        <meta property="og:title" content="{{ og_title|default('WeCreate') }}">
+        <meta property="og:description" content="{{ og_description|default('WeCreate builds software, websites, and mobile applications for companies and individuals.') }}">
+        <meta property="og:url" content="{{ og_url|default(base_url ~ '/') }}">
+        <meta property="og:image" content="{{ og_image }}">
+
+        <!-- Twitter card -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="{{ og_title|default('WeCreate') }}">
+        <meta name="twitter:description" content="{{ og_description|default('WeCreate builds software, websites, and mobile applications for companies and individuals.') }}">
+        <meta name="twitter:image" content="{{ og_image }}">
+
+        <!-- Structured data -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "WeCreate",
+            "url": "{{ base_url }}/",
+            "logo": "{{ base_url ~ asset('assets/img/logo/logo.svg') }}",
+            "description": "WeCreate is a platform to provide services for companies and individuals to create software, websites, and applications.",
+            "sameAs": [
+                "https://rsvp.wecreate-services.com/",
+                "https://wobble.wecreate-services.com/",
+                "https://flipdrop.wecreate-services.com/"
+            ]
+        }
+        </script>
+
         {% block stylesheets %}
         {% endblock %}
 
