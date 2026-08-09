@@ -1,0 +1,31 @@
+<!-- Page header section start -->
+<section class="ep-page-header-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="header-img">
+                    <img src="{{ asset('assets/img/images/page-header-img.svg') }}" alt="page-header-img">
+                </div>
+            </div>
+            <div class="col-sm-6 ms-auto">
+                <div class="bread-crumb text-end">
+                    <h1 class="page-title">{{ page_title|default('Blog') }}</h1>
+                    <ul class="list-unstyled d-flex flex-wrap align-items-center justify-content-end mt-30">
+                        <li>
+                            <a href="/">Home</a>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </li>
+                        {% if page_title|default('Blog') != 'Blog' %}
+                            <li>
+                                <a href="/blog">Blog</a>
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </li>
+                        {% endif %}
+                        <li>{{ breadcrumb|default('Blog') }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Page header section end -->

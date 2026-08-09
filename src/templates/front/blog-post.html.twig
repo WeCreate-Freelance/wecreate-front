@@ -1,0 +1,177 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/fontawsome/css/fontawesome.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/slick.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/animate.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/odometer.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/blog.css') }}">
+{% endblock %}
+
+{% block head_javascripts %}
+    {# Tells Google this is an article rather than another marketing page. #}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": {{ post.title|json_encode|raw }},
+        "description": {{ post.description|json_encode|raw }},
+        "datePublished": "{{ post.date|date('Y-m-d') }}",
+        "dateModified": "{{ post.lastModified|date('Y-m-d') }}",
+        "author": { "@type": "Organization", "name": {{ post.author|json_encode|raw }} },
+        "publisher": {
+            "@type": "Organization",
+            "name": "WeCreate",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://wecreate-services.com{{ asset('assets/img/logo/logo.svg') }}"
+            }
+        },
+        "mainEntityOfPage": "https://wecreate-services.com{{ post.url }}"
+        {%- if post.image %},
+        "image": "https://wecreate-services.com{{ asset(post.image) }}"
+        {%- endif %}
+    }
+    </script>
+
+    {# Breadcrumbs are one of the few rich results Google still shows widely,
+       and they put "wecreate-services.com › Blog" under the result. #}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://wecreate-services.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://wecreate-services.com/blog" },
+            { "@type": "ListItem", "position": 3, "name": {{ post.title|json_encode|raw }} }
+        ]
+    }
+    </script>
+{% endblock %}
+
+{% block body %}
+    {% include 'front/common/preloader.html.twig' %}
+    {% include 'front/common/header.html.twig' %}
+
+    <!-- Main area start -->
+    <main>
+        {% include 'front/common/blog-banner.html.twig' with { page_title: post.title, breadcrumb: post.title } %}
+
+        <!-- Blog post section start -->
+        <section class="ep-blog-section pt-120 pb-120">
+            <div class="container">
+                <article class="blog-post">
+                    <header class="post-header">
+                        {% if post.tags %}
+                            <ul class="post-tags list-unstyled d-flex flex-wrap">
+                                {% for tag in post.tags %}
+                                    <li><a href="/blog">{{ tag }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                        <ul class="blog-meta list-unstyled d-flex flex-wrap align-items-center gap-4 mb-0">
+                            <li>
+                                <a href="{{ post.url }}">
+                                    <i class="fa-regular fa-calendar"></i>
+                                    <time datetime="{{ post.date|date('Y-m-d') }}">{{ post.date|date('F j, Y') }}</time>
+                                </a>
+                            </li>
+                            {% if post.updated %}
+                                <li>
+                                    <a href="{{ post.url }}">
+                                        <i class="fa-regular fa-pen-to-square"></i>
+                                        Updated
+                                        <time datetime="{{ post.updated|date('Y-m-d') }}">{{ post.updated|date('F j, Y') }}</time>
+                                    </a>
+                                </li>
+                            {% endif %}
+                            <li>
+                                <a href="{{ post.url }}">
+                                    <i class="fa-regular fa-user"></i>
+                                    {{ post.author }}
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ post.url }}">
+                                    <i class="fa-regular fa-clock"></i>
+                                    {{ post.readingMinutes }} min read
+                                </a>
+                            </li>
+                        </ul>
+                    </header>
+
+                    {% if post.image %}
+                        <div class="post-cover">
+                            <img src="{{ asset(post.image) }}" alt="{{ post.title }}">
+                        </div>
+                    {% endif %}
+
+                    {# Rendered from Markdown by BlogRepository; the source lives in content/blog/. #}
+                    <div class="post-body">
+                        {{ post.html|raw }}
+                    </div>
+                </article>
+
+                {% if recent %}
+                    <div class="row g-4 mt-5 pt-5">
+                        <div class="col-12">
+                            <h2 class="section-title">More from the blog</h2>
+                        </div>
+                        {% for other in recent %}
+                            <div class="col-lg-4 col-md-6">
+                                <article class="blog-item">
+                                    {% if other.image %}
+                                        <div class="img">
+                                            <a href="{{ other.url }}">
+                                                <img src="{{ asset(other.image) }}" alt="{{ other.title }}">
+                                            </a>
+                                        </div>
+                                    {% endif %}
+                                    <div class="text">
+                                        <ul class="blog-meta list-unstyled d-flex flex-wrap align-items-center gap-4 mb-3">
+                                            <li>
+                                                <a href="{{ other.url }}">
+                                                    <i class="fa-regular fa-calendar"></i>
+                                                    {{ other.date|date('F j, Y') }}
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <h3 class="blog-title">
+                                            <a href="{{ other.url }}">{{ other.title }}</a>
+                                        </h3>
+                                        <p>{{ other.description }}</p>
+                                        <a class="read-more" href="{{ other.url }}">
+                                            Read more <i class="fa-solid fa-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </article>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+        </section>
+        <!-- Blog post section end -->
+    </main>
+    <!-- Main area end -->
+
+    {% include 'front/common/back-to-top-button.html.twig' %}
+    {% include 'front/common/footer.html.twig' %}
+{% endblock %}
+
+{% block body_javascripts %}
+    <script src="{{ asset('assets/js/vendor/jquery-3.6.0.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('assets/js/gsap.js') }}"></script>
+    <script src="{{ asset('assets/js/gsap-scroll-trigger.js') }}"></script>
+    <script src="{{ asset('assets/js/gsap-split-text.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.appear.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.odometer.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('assets/js/ajax-form.js') }}"></script>
+    <script src="{{ asset('assets/js/slick.min.js') }}"></script>
+    <script src="{{ asset('assets/js/script.js') }}"></script>
+{% endblock %}

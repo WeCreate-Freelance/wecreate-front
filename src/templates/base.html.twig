@@ -3,7 +3,8 @@
     <head>
         <meta charset="UTF-8">
         {% set base_url = 'https://wecreate-services.com' %}
-        {% set og_image = base_url ~ asset('assets/img/banner/banner-img-2.png') %}
+        {# A page can pass its own og_image; otherwise everything shares one. #}
+        {% set og_image = og_image|default(base_url ~ asset('assets/img/banner/banner-img-2.png')) %}
         <!-- Required meta tags -->
         {{ meta_tags() }}
         <!-- Favicon -->

@@ -15,4 +15,11 @@ if ($path !== '/' && is_file($root . $path)) {
 
 $_SERVER['SCRIPT_NAME'] = '/index.php';
 
+// Symfony's runtime re-requires SCRIPT_FILENAME to get the app closure. For an
+// extensionless path the built-in server already points it at index.php, but for
+// one like /sitemap.xml it points back here — and requiring this file a second
+// time yields int(1) instead of the closure, which the runtime rejects. nginx
+// does not have the problem: fastcgi_param sets SCRIPT_FILENAME to index.php.
+$_SERVER['SCRIPT_FILENAME'] = $root . '/index.php';
+
 require $root . '/index.php';

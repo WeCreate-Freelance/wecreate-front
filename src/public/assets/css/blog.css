@@ -1,0 +1,228 @@
+/*=============================
+    Blog CSS
+    Only what style.css does not already cover: the listing cards need equal
+    heights in a grid (the theme built them for a carousel), and Markdown
+    output arrives as bare tags with no classes to hang styles on.
+===============================*/
+
+/* --- Listing ------------------------------------------------------------ */
+
+.ep-blog-section .blog-item {
+    border-radius: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.ep-blog-section .blog-item .img {
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+}
+
+.ep-blog-section .blog-item .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ep-blog-section .blog-item .text {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+}
+
+/* Pins "Read more" to the bottom so it lines up across cards of unequal
+   summary length. */
+.ep-blog-section .blog-item .text .read-more {
+    margin-top: auto;
+    color: var(--bs-secondary-color);
+    font-weight: 500;
+}
+
+.ep-blog-section .blog-item .text .read-more i {
+    margin-left: 8px;
+    font-size: 13px;
+    transition: var(--bs-transition);
+}
+
+.ep-blog-section .blog-item .text .read-more:hover i {
+    margin-left: 14px;
+}
+
+.blog-empty {
+    text-align: center;
+    padding: 60px 0;
+    color: var(--bs-paragraph-color);
+}
+
+/* --- Post body ---------------------------------------------------------- */
+
+.blog-post {
+    max-width: 820px;
+    margin: 0 auto;
+}
+
+.blog-post .post-header {
+    margin-bottom: 40px;
+}
+
+.blog-post .post-header .post-tags {
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.blog-post .post-header .post-tags li a {
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 40px;
+    font-size: 14px;
+    line-height: 22px;
+    color: var(--bs-secondary-color);
+    background-color: rgba(0, 68, 235, 0.08);
+}
+
+.blog-post .post-cover {
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.blog-post .post-cover img {
+    width: 100%;
+    height: auto;
+}
+
+/* Markdown output starts here. Selectors stay inside .post-body so they can
+   never leak into the rest of the theme. */
+.blog-post .post-body {
+    color: var(--bs-paragraph-color);
+    font-size: var(--bs-body-font-size);
+    line-height: 32px;
+}
+
+.blog-post .post-body > *:first-child {
+    margin-top: 0;
+}
+
+.blog-post .post-body h2 {
+    font-family: var(--bs-font-secondary);
+    color: var(--bs-black-color);
+    font-size: 32px;
+    line-height: 42px;
+    margin: 50px 0 18px;
+}
+
+.blog-post .post-body h3 {
+    font-family: var(--bs-font-secondary);
+    color: var(--bs-black-color);
+    font-size: 24px;
+    line-height: 34px;
+    margin: 36px 0 14px;
+}
+
+.blog-post .post-body p {
+    margin-bottom: 22px;
+}
+
+.blog-post .post-body a {
+    color: var(--bs-secondary-color);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.blog-post .post-body a:hover {
+    color: var(--bs-primary-color);
+}
+
+.blog-post .post-body ul,
+.blog-post .post-body ol {
+    margin: 0 0 22px 22px;
+}
+
+.blog-post .post-body li {
+    margin-bottom: 10px;
+}
+
+.blog-post .post-body strong {
+    color: var(--bs-black-color);
+}
+
+.blog-post .post-body img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 16px;
+    margin: 30px 0;
+}
+
+.blog-post .post-body blockquote {
+    margin: 30px 0;
+    padding: 6px 0 6px 24px;
+    border-left: 3px solid var(--bs-primary-color);
+    color: var(--bs-black-color);
+    font-size: 20px;
+    line-height: 32px;
+}
+
+.blog-post .post-body blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+.blog-post .post-body hr {
+    margin: 44px 0;
+    border: 0;
+    border-top: 1px solid var(--bs-border-color);
+    opacity: 1;
+}
+
+.blog-post .post-body table {
+    width: 100%;
+    margin-bottom: 26px;
+    border-collapse: collapse;
+    font-size: 16px;
+    line-height: 26px;
+}
+
+.blog-post .post-body th,
+.blog-post .post-body td {
+    padding: 12px 16px;
+    border: 1px solid var(--bs-border-color);
+    text-align: left;
+    vertical-align: top;
+}
+
+.blog-post .post-body th {
+    color: var(--bs-black-color);
+    background-color: var(--bs-background-color);
+    white-space: nowrap;
+}
+
+.blog-post .post-disclosure {
+    margin-top: 50px;
+    padding: 20px 24px;
+    border-radius: 16px;
+    background-color: var(--bs-background-color);
+    font-size: 15px;
+    line-height: 26px;
+}
+
+@media (max-width: 767px) {
+    /* Markdown gives no wrapper to scroll, so the table becomes its own
+       scroll container rather than widening the page. */
+    .blog-post .post-body table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .blog-post .post-body h2 {
+        font-size: 26px;
+        line-height: 36px;
+        margin-top: 38px;
+    }
+
+    .blog-post .post-body h3 {
+        font-size: 21px;
+        line-height: 30px;
+    }
+}
